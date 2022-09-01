@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Manrope:wght@500;800&display=swap');
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    @include center();
+    margin: 0 auto;
+    background-color: hsl(218, 23%, 16%);
+    height: 100vh;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    min-width: 375px;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: hsl(217, 19%, 24%);
+    min-width: 320px;
+    width: 32rem;
+    height: 18rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 165px -57px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 165px -57px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 165px -57px rgba(0,0,0,0.75);
+    p{
+        color: hsl(193, 38%, 86%);
+        font-size: 28px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    h1{
+        color: hsl(150, 100%, 66%);
+        font-size: 14px;
+        letter-spacing: 0.3rem;
+    }
+    #divider-image{
+        position: relative;
+        bottom: 0.3rem;
+    }
+    #divider-image-mb{
+        display: none;
+    }
+}
+
+.dice-wrapper{
+    @include center();
+    background-color:  hsl(150, 100%, 66%);
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    margin-bottom: -3.5rem;
+    z-index: 1;
+}
+
+
+$small: 375px;
+$medium: 570px;
+ //some CSS
+@media screen and (min-width: $small) and (max-width: $medium) {
+    .container{
+        width: 18rem;
+        padding: 1.5rem;
+
+        #divider-image-mb{
+            display: block;
+            position: relative;
+            bottom: 0.3rem;
+        }
+        #divider-image{
+            display: none;
+        }
+        p{
+            font-size: 24px;
+        }
+    }
+   
+}
